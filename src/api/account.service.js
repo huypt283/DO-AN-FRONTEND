@@ -29,7 +29,7 @@ export const AccountService = {
   },
 
   async refreshToken () {
-    return axios.get(`http://localhost:8081/refresh-token`, {
+    return axios.get(`https://nha-tro-back-end.herokuapp.com/refresh-token`, {
       headers: {
         'lynx': `$xzyw.${Cookie.get('refresh_token')}`
       }

@@ -257,9 +257,6 @@ export default {
   },
 
   async created () {
-    this.cities = await AddressService.cities()
-    this.districtsSave = await AddressService.districts()
-    this.wardsSave = await AddressService.wards()
     let email = this.profile ? this.profile.email : ''
 
     this.data = await ArticleService.articles(email)
@@ -267,6 +264,10 @@ export default {
     this.dataHotNews = this.data.filter(article => article.vip)
     this.newsSuggestion = await NewsService.news()
     this.articleSuggestion = await ArticleService.articlesSuggestion(email)
+
+    this.cities = await AddressService.cities()
+    this.districtsSave = await AddressService.districts()
+    this.wardsSave = await AddressService.wards()
   },
 
   methods: {
